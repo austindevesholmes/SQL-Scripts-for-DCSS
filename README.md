@@ -1,4 +1,4 @@
-# SQL-Scripts-for-Dougherty-County-School-System
+# "SQL Scripts for Dougherty County School System"
 Hello my name is Austin Holmes. I am the Enterprise Application Specialist and Database Administrator for Dougherty County School System. 
 This repository consists of SQL Scripts I created while developing reports for Dougherty County School System. 
 The database management system used is Microsoft SQL Server.
