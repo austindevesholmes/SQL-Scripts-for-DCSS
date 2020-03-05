@@ -1,0 +1,10 @@
+--This is a script that gets returns all of the active enrolled students--
+
+SELECT * 
+FROM enrollment e 
+JOIN schoolyear sy ON sy.endyear = e.endyear
+WHERE sy.active = 1
+AND ISNULL(e.noshow, 0) =  0
+AND e.active = 1 
+AND e.servicetype = 'p'
+AND e.enddate is null 
