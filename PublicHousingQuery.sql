@@ -51,7 +51,7 @@ OR contacts_addressLine1 LIKE ('%Monroe%')
 OR contacts_addressLine1 LIKE ('%4th%')
 OR contacts_addressLine1 LIKE ('%Fourth%'))
 
-AND GuardianHousing.Relation != 'Sibling' 
-AND GuardianHousing.Relation != 'Self'
+AND GH.Relation != 'Sibling' 
+AND GH.Relation != 'Self'
 
 ORDER BY student_lastname;
