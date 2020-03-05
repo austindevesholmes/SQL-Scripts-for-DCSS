@@ -1,8 +1,8 @@
 SELECT *
 
-FROM PublicHousing 
+FROM PH
 
-JOIN GuardianHousing ON PublicHousing.StudentID = GuardianHousing.StudentID
+JOIN GH ON PH.StudentID = GH.StudentID
 
 WHERE (contacts_addressLine1 LIKE ('%Tift%') 
 OR contacts_addressLine1 LIKE ('%Stadium%')
