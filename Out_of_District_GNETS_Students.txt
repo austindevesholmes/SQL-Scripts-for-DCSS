@@ -1,5 +1,3 @@
---Returns all students enrolled at GNETS that are not in the district--
-
 SELECT DISTINCT
 i.lastname, 
 i.firstname, 
@@ -7,14 +5,14 @@ p.studentnumber,
 p.stateid, 
 sl.name 
 
-FROM person p 
-JOIN [identity] i ON i.identityID = p.currentIdentityID
-JOIN roster r ON r.personid = p.personid 
-JOIN enrollment e ON e.personid = r.personid 
-JOIN calendar cal ON cal.calendarid = e.calendarid
-JOIN schoolyear sy ON sy.endyear = cal.endyear 
-JOIN school sl ON sl.schoolid = cal.schoolid
-LEFT JOIN enrollmentga  ega ON ega.enrollmentID = e.enrollmentID 
+FROM x p 
+JOIN [xx] i ON i.identityID = p.currentIdentityID
+JOIN xxx r ON r.personid = p.personid 
+JOIN xxxx e ON e.personid = r.personid 
+JOIN xxxxx cal ON cal.calendarid = e.calendarid
+JOIN xxxxxx sy ON sy.endyear = cal.endyear 
+JOIN xxxxxxx sl ON sl.schoolid = cal.schoolid
+LEFT JOIN xxxxxxxx ega ON ega.enrollmentID = e.enrollmentID 
 
 WHERE  
 sy.active = 1
