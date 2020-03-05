@@ -10,3 +10,6 @@ PublicHousingQuery.sql-
 
 
 All_Active_Enrolled_Students.txt- "This script returns all active enrolled students in the district". 
+
+
+--Returns all students enrolled at GNETS that are not in the district--
