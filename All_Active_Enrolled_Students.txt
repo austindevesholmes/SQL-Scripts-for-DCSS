@@ -1,5 +1,3 @@
---This is a script that gets returns all of the active enrolled students--
-
 SELECT * 
 FROM x e 
 JOIN xx sy ON sy.endyear = e.endyear
