@@ -6,7 +6,7 @@
 **PublicHousingQuery.sql**- "I was given an Excel spreadsheet consisting of all of the students in the district and their addresses. I was assigned the task of retrieving all of the students that lived in Section 8 housing. I imported these spreadsheets into SQL Server and created a script filtering out all the streets that were Section 8 housing".                                                                               
 
 
-**All_Active_Enrolled_Students.txt**- "This script returns all active enrolled students in the district". 
+**All_Active_Enrolled_Students.txt**- "Returns all active enrolled students in the district". 
 
 
 **Out_of_District_GNETS_Students.txt**- "Returns all students enrolled at GNETS that are not in the district".
