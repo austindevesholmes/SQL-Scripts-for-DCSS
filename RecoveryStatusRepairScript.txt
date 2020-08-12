@@ -1,0 +1,20 @@
+--This is a script to get database out of Recovery status-- 
+
+--Step 1 (Check Database Status) 
+SELECT 
+DATABASEPROPERTYEX ('CM_DSS', 'status') AS '"CM_DSS Current Status"', 
+DATABASEPROPERTYEX ('ReportServer', 'status') AS '"ReportServer Current Status"',
+DATABASEPROPERTYEX ('ReportServerTempDB', 'status') AS '"ReportServerTempDB Current Status"',
+DATABASEPROPERTYEX ('SUSDB', 'status') AS '"SUSDB Current Status"'
+
+--Step 2 (Set Database into Single User Mode)
+ALTER DATABASE ReportServer SET Single_User
+ 
+--Step 3 (Set Database in Emergency Mode)
+ALTER DATABASE ReportServer SET EMERGENCY
+
+--Step 4 (Repair Missing Log File with Dataloss  
+DBCC CHECKDB('ReportServer', REPAIR_ALLOW_DATA_LOSS)
+
+--Step 5 Set Database Access for Everyone 
+ALTER DATABASE ReportServer SET MULTI_USER 
