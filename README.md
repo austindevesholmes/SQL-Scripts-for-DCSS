@@ -10,4 +10,4 @@
 
 **Out_of_District_GNETS_Students.txt**- "Returns all students enrolled at GNETS that are not in the district".
 
-**All_Students_Schedule.sql** (08/12/2020)- "Returns all students and their schedules along with teacher names for each course".
+**All_Students_Schedule.sql**- "Returns all students and their schedules along with teacher names for each course". (08/12/2020)
