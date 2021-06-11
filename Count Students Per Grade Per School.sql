@@ -2,14 +2,14 @@
 
 SELECT e.grade as Grade, COUNT(DISTINCT e.personID) as StudentCount, max(e.startdate) As LatestEntry, s.name as SchoolName 
 
-FROM enrollment e 
-join calendar cl ON cl.calendarID = e.calendarID
-join schoolyear sy ON sy.endYear = cl.endyear
-join school s on s.schoolID = cl.schoolID 
+FROM e 
+JOIN cl ON cl.calendarID = e.calendarID
+JOIN sy ON sy.endYear = cl.endyear
+JOIN s on s.schoolID = cl.schoolID 
 
 WHERE sy.active = 1 
-and e.active = 1 
-and isnull(e.noshow, 0) = 0 
+AND e.active = 1 
+AND isnull(e.noshow, 0) = 0 
 
 GROUP BY e.grade, s.name 
 
