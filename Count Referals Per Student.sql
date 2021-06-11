@@ -11,8 +11,8 @@ COUNT(be.eventid) AS 'Number of Referals'
 --be.resolutionname AS 'Resolution Name', 
 --be.resolutionschooldaysduration AS 'Number of Days Suspended'
 
-FROM student s
-JOIN v_behaviordetail be ON be.personid = s.personid 
+FROM s
+JOIN be ON be.personid = s.personid 
 
 --WHERE 
 --be.calendarid = '694' /*MLK 18-19*/
