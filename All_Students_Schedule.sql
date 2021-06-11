@@ -36,7 +36,7 @@ left join contact ctt on ctt.personID = pt.personID
 WHERE
 sy.active = 1 
 and e.active = 1
---and e.serviceType = 'P'
+and e.serviceType = 'P'
 and isnull(e.noshow, 0) = 0
 and e.enddate is null
 and sc.term_num = '1'
