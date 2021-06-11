@@ -2,10 +2,10 @@
 
 SELECT COUNT(DISTINCT e.personID) as withdrawnstudents, s.name as schoolname, e.endyear 
 
-FROM enrollment e 
-join calendar c on e.calendarID = c.calendarID 
-join school s on s.schoolID = c.SchoolID 
-join schoolyear sy on sy.endyear = c.endyear 
+FROM e 
+JOIN c on e.calendarID = c.calendarID 
+JOIN s on s.schoolID = c.SchoolID 
+JOIN sy on sy.endyear = c.endyear 
 --join campusdictionary cd on cd.code = e.endstatus
 --join campusattribute ca on ca.attributeID = cd.attributeID
 
