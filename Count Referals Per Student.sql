@@ -1,4 +1,4 @@
---This query counts the number of referals per student. 
+--This script counts the number of referals per student. 
 
 SELECT DISTINCT 
 s.studentnumber AS 'StudentNumber', 
