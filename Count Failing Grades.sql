@@ -1,4 +1,4 @@
---This query counts the total number of failing grades per student. Filter by school, endyear, and terms. 
+--This script counts the total number of failing grades per student. Filter by school, endyear, and terms. 
 
 SELECT DISTINCT
 s.studentnumber AS 'StudentNumber/Dataset ID', 
