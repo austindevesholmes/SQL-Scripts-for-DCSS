@@ -1,4 +1,4 @@
-/*This query returns all students and their schedules along with teacher names for each course*/
+/*This script returns all students and their schedules along with teacher names for each course*/
 SELECT DISTINCT 
 
 cl.name AS CalendarName,
