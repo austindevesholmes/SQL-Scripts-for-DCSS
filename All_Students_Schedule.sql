@@ -1,4 +1,5 @@
 /*This script returns all students and their schedules along with teacher names for each course*/
+
 SELECT DISTINCT 
 
 cl.name AS CalendarName,
@@ -10,36 +11,36 @@ e.grade AS StudentGrade,
 sl.name AS SchoolName, 
 sl.schoolid AS SchoolID,  
 course_name AS CourseName,
-sc.section_num as SectionNumber, 
+sc.section_num AS SectionNumber, 
 course_num AS CourseNumber,
 period_num AS PeriodNumber ,  
-it.lastname as TeacherLastName,
-it.firstname as TeacherFirstName, 
-ctt.email as TeacherEmail 
+it.lastname AS TeacherLastName,
+it.firstname AS TeacherFirstName, 
+ctt.email AS TeacherEmail 
 
-FROM  prsn p
-join [iden] i on i.identityID = p.currentidentityID
-join enroll e on e.personID = p.personID
-join calen cl on cl.calendarID = e.calendarID 
-join school sl ON sl.schoolid = cl.schoolid 
-join syear sy on sy.endyear = e.endyear and sy.active =1
-left join cont ct on ct.personID = p.personID
-join view_k12 sc on sc.personID = e.personID and e.calendarID  = sc.calendarID
-left join rost r on r.personID = p.personID
-left join sec se on se.sectionID = r.sectionID
-left join prd pd on pd.periodid = se.sectionid 
-left join Crse c on c.courseID = se.courseID and c.calendarID = cl.calendarID
-join prsn pt on pt.personID = sc.teacherPersonID
-join [iden] it on it.identityID= pt.currentIdentityID
-left join cont ctt on ctt.personID = pt.personID
+FROM p
+JOIN i ON i.identityID = p.currentidentityID
+JOIN e ON e.personID = p.personID
+JOIN cl ON cl.calendarID = e.calendarID 
+JOIN sl ON sl.schoolid = cl.schoolid 
+JOIN sy ON sy.endyear = e.endyear AND sy.active =1
+LEFT JOIN ct ON ct.personID = p.personID
+JOIN view_k12 sc ON sc.personID = e.personID AND e.calendarID  = sc.calendarID
+LEFT JOIN r ON r.personID = p.personID
+LEFT JOIN se ON se.sectionID = r.sectionID
+LEFT JOIN pd ON pd.periodid = se.sectionid 
+LEFT JOIN c ON c.courseID = se.courseID AND c.calendarID = cl.calendarID
+JOIN pt ON pt.personID = sc.teacherPersonID
+JOIN it ON it.identityID= pt.currentIdentityID
+LEFT JOIN cont ctt ON ctt.personID = pt.personID
 
 WHERE
 sy.active = 1 
-and e.active = 1
-and e.serviceType = 'P'
-and isnull(e.noshow, 0) = 0
-and e.enddate is null
-and sc.term_num = '1'
+AND e.active = 1
+AND e.serviceType = 'P'
+AND isnull(e.noshow, 0) = 0
+AND e.enddate is null
+AND sc.term_num = '1'
 
 ORDER BY 
 i.lastname, i.firstname, period_num 
